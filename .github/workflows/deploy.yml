@@ -32,8 +32,8 @@ jobs:
 
 
     # Authenticate Docker to GCP
-      - name: Authenticate Docker
-        run: gcloud auth configure-docker gcr.io
+    - name: Authenticate Docker
+      run: gcloud auth configure-docker gcr.io
 
 
     # Build and push the Docker image to Artifact Registry
