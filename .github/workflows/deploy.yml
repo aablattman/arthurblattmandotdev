@@ -32,7 +32,7 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         IMAGE_NAME=gcr.io/${{ secrets.GCP_PROJECT }}/arthurblattmandotdev
-        docker build -t $IMAGE_NAME .
+        docker build -t $IMAGE_NAME -f gcp/Dockerfile .
         gcloud auth configure-docker gcr.io
         docker push $IMAGE_NAME
 
