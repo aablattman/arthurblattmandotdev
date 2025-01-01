@@ -19,3 +19,11 @@ body {
   background: var(--background);
   font-family: var(--font-mono);
 }
+
+.aabdd-top-module {
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 16px;
+  border: 1px dashed grey;
+}
