@@ -31,17 +31,16 @@ jobs:
       run: gcloud config set run/region ${{ secrets.GCP_REGION }}
 
 
-    # Authenticate Docker to GCP
-    - name: Authenticate Docker
-      run: gcloud auth configure-docker gcr.io
+    - name: Authenticate Docker with Artifact Registry
+      run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
 
 
     # Build and push the Docker image to Artifact Registry
     - name: Build and Push Docker Image
       run: |
-        IMAGE_NAME=gcr.io/${{ secrets.GCP_PROJECT }}/arthurblattmandotdev
+        IMAGE_NAME=us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/arthur-repo/arthurblattmandotdev
         docker build -t $IMAGE_NAME -f gcp/Dockerfile .
-        gcloud auth configure-docker gcr.io
         docker push $IMAGE_NAME
 
 
@@ -49,6 +48,6 @@ jobs:
     - name: Deploy to Cloud Run
       run: |
         gcloud run deploy arthurblattmandotdev \
-          --image gcr.io/${{ secrets.GCP_PROJECT }}/arthurblattmandotdev \
+          --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/arthur-repo/arthurblattmandotdev \
           --platform managed \
           --allow-unauthenticated
