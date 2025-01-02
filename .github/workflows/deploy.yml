@@ -52,4 +52,5 @@ jobs:
         gcloud run deploy arthurblattmandotdev \
           --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/arthurblattmandotdev-repo/arthurblattmandotdev \
           --platform managed \
+          --region us-central1 \
           --allow-unauthenticated
