@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
+import AabddHeader from './components/AabddHeader';
+import AabddFooter from './components/AabddFooter';
+
 const robotoMono = Roboto_Mono({
   variable: "--font-mono",
   subsets: ["latin"]
@@ -17,8 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${robotoMono.variable} antialiased`}>
-        {children}
+      <body className={`${robotoMono.variable} antialiased layout`}>
+        <AabddHeader />
+        <main className="aabdd-content">{children}</main>
+        <AabddFooter />
       </body>
     </html>
   );

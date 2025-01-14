@@ -14,16 +14,63 @@
   }
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-mono);
 }
 
-.aabdd-top-module {
-  margin-top: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+.aabdd-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: var(--background);
+  border-bottom: 1px solid var(--foreground);
   padding: 16px;
-  border: 1px dashed grey;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Optional hover effect */
+}
+
+.github-link:hover {
+  opacity: 0.8;
+}
+
+.aabdd-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: var(--background);
+  border-top: 1px solid var(--foreground);
+  text-align: center;
+  padding: 8px 16px;
+}
+
+.aabdd-content {
+  flex: 1;
 }
