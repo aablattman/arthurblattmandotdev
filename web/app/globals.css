@@ -49,6 +49,16 @@ body {
   align-items: center;
 }
 
+.aabdd-header span {
+  margin-right: auto; /* Ensures the text stays on the left */
+}
+
+.header-icons {
+  display: flex;
+  gap: 16px; /* Add space between icons */
+}
+
+
 .github-link {
   display: flex;
   align-items: center;
@@ -73,4 +83,24 @@ body {
 
 .aabdd-content {
   flex: 1;
+}
+
+.website-intro {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  text-align: center; /* Center text alignment inside the box */
+  height: 100%; /* Optional: Ensure the box takes up available height */
+  padding: 16px; /* Optional: Add some padding */
+}
+
+
+.pick-crunch-box {
+  background-color: var(--background);
+  border: 2px dashed var(--foreground);
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
 }

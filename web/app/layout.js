@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-import AabddHeader from './components/AabddHeader';
-import AabddFooter from './components/AabddFooter';
+import AabddHeader from './components/aabdd-header';
+import AabddFooter from './components/aabdd-footer';
 
 const robotoMono = Roboto_Mono({
   variable: "--font-mono",
