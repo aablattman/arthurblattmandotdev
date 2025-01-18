@@ -91,7 +91,7 @@ body {
   align-items: center; /* Vertically center content */
   text-align: center; /* Center text alignment inside the box */
   height: 100%; /* Optional: Ensure the box takes up available height */
-  padding: 16px; /* Optional: Add some padding */
+  padding: 40px; /* Optional: Add some padding */
 }
 
 
@@ -103,4 +103,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; 
+}
+
+.pick-crunch-tech-stack {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0; /* Remove default padding */
+  margin-left: 16px; /* Indent to align with "N" in "NextJS" */
+}
+
+.pick-crunch-tech-stack li {
+  margin-bottom: 4px; /* Add spacing between items */
 }
