@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 
 #define LIST_SIZE 1000
@@ -13,8 +14,10 @@ int main() {
 	char rnd_ints_filename[50] = "random_integers.txt";
 	int int_arr[LIST_SIZE];
 
-	int min_index, sort_buff;
+	int n_swaps, sort_buff;
 	int i = 0;
+
+	bool is_sorted = false;
 
 
 	rnd_ints = fopen(rnd_ints_filename, "r");
@@ -34,19 +37,24 @@ int main() {
 	fclose(rnd_ints);
 
 
-	for(int j = 0; j < LIST_SIZE-1; j++) {
-		min_index = j;
+	while(!is_sorted) {
+		n_swaps = 0;
 
-		for(int k = j+1; k < LIST_SIZE; k++) {
-			if(int_arr[min_index] > int_arr[k]) {
-				min_index = k;
+		for (int j = 0; j < LIST_SIZE -1; j++) {
+			if (int_arr[j]  > int_arr[j+1]) {
+				sort_buff = int_arr[j];
+				int_arr[j] = int_arr[j+1];
+				int_arr[j+1] = sort_buff;
+
+				n_swaps++;
 			}
 		}
 
-		sort_buff = int_arr[j];
-		int_arr[j] = int_arr[min_index];
-		int_arr[min_index] = sort_buff;
-	}
+		if (n_swaps == 0) {
+			is_sorted = true;
+		}
+	} 
+
 
 	printf("First 10 sorted\n");
 	for(int l = 0; l < 10; l++) {
