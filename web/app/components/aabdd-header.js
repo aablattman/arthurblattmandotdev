@@ -10,6 +10,9 @@ export default function AabddHeader() {
 		<Box className="aabdd-header">
 			<span>arthurblattman.dev</span>
 			<Box className="header-icons">
+				<Link className="leetcode-link" href="https://leetcode.com/u/aablattman/" passHref>
+					<Image src="/leetcode.png" alt="LeetCode Icon" width={24} height={24} />
+				</Link>
 				<Link className="github-link" href="https://pickcrunch.com" passHref>
 					<Image src="/PickCrunch-Icon-RGB.png" alt="Pick Crunch Icon" width={24} height={24} />
 				</Link>
