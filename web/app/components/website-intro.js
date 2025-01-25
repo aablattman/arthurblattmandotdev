@@ -6,7 +6,7 @@ export default function WebsiteIntro() {
   return (
     <>
       <Box className="website-intro">
-          This is the actual Large Hadron Colander.
+          When you've forgotten two's complement but remember 88 decimals of pi.
       </Box>
     </>
   );
