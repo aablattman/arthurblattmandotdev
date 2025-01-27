@@ -20,11 +20,11 @@ export async function GET(req) {
     const requestKey = req.headers.get('BLIZZ_BLATT_KEY'); // Fetch key from headers
     if (!requestKey || requestKey !== process.env.BLIZZ_BLATT_KEY) {
       return new Response(
-        JSON.stringify({ error: 'Unauthorized: Missing or invalid BLIZZ_BLATT_KEY' }),
+        JSON.stringify({ error: 'Unauthorized: Missing or invalid request 1' }),
         { status: 401, headers: { 'Content-Type': 'application/json' } }
       );
     }
-    
+
 
     // Fetch the OAuth token
     const tokenResponse = await fetch(tokenUrl, {
