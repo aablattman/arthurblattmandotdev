@@ -18,7 +18,8 @@ export async function GET(req) {
 
     // Verify the presence of the BLIZZ_BLATT_KEY in the request header
     const requestKey = req.headers.get('BLIZZ_BLATT_KEY'); // Fetch key from headers
-    console.log(requestKey);
+    console.log(process.env.BLIZZ_BLATT_KEY);
+
     if (!requestKey || requestKey !== process.env.BLIZZ_BLATT_KEY) {
       return new Response(
         JSON.stringify({ error: 'Unauthorized: Missing or invalid request 1' }),
