@@ -1,5 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '/.secrets/.env' });
+
 import { Storage } from '@google-cloud/storage';
-import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
 
 
 
@@ -7,28 +9,28 @@ export async function GET(req) {
   const tokenUrl = 'https://oauth.battle.net/token';
   const apiUrl = 'https://us.api.blizzard.com/sc2/ladder/grandmaster/1?region=us';
 
-  const client = new SecretManagerServiceClient();
-  const secretName = process.env.BLIZZARD_SECRET_PATH;
-
   const storage = new Storage();
-  const bucketName = process.env.BLIZZARD_SC2_GM_BUCKET_NAME
+  const bucketName = process.env.BLIZZARD_SC2_GM_BUCKET_NAME;
+
 
 
   try {
 
-    // Get secrets from GSM
-    const [secretResponse] = await client.accessSecretVersion({
-      name: secretName
-    });
-    const secretPayload = secretResponse.payload.data.toString('utf8');
-    const { client_id: clientId, client_secret: clientSecret } = JSON.parse(secretPayload);
-
+    // Verify the presence of the BLIZZ_BLATT_KEY in the request header
+    const requestKey = req.headers.get('BLIZZ_BLATT_KEY'); // Fetch key from headers
+    if (!requestKey || requestKey !== process.env.BLIZZ_BLATT_KEY) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized: Missing or invalid BLIZZ_BLATT_KEY' }),
+        { status: 401, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    
 
     // Fetch the OAuth token
     const tokenResponse = await fetch(tokenUrl, {
       method: 'POST',
       headers: {
-        Authorization: `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(`${process.env.BLIZZARD_API_CLIENT_ID}:${process.env.BLIZZ_ARD_API_CLIENT_SECRET}`).toString('base64')}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: 'grant_type=client_credentials',
