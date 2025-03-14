@@ -9,17 +9,18 @@ import { Box, Typography } from '@mui/material';
 
 export default function PickCrunchBox() {
 	return (
-		<Link href="https://pickcrunch.com" passHref>
+		<a href="https://pickcrunch.com" target="_blank" rel="noopener noreferrer">
 			<Box className="pick-crunch-box">
-				<Box>
-						<Image src="/PickCrunch-Main-RGB.png" width={200} height={200} alt="Pick Crunch Logo" />
+				<Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+					<Image src="/PickCrunch-Main-RGB.png" width={200} height={100} alt="Pick Crunch Logo" />
 				</Box>
-				<Box sx={{ marginLeft: '50px'}}>
-			        Create groups with your friends and pick NFL, NCAAFB, NBA, NCAABB, MLB
-			        and NHL games. Pick spreads and totals in matchup, ranked or flat pick
-			        modes.
-			    </Box>
+				
+				<Box sx={{ marginLeft: 10, flexGrow: 1, display: "flex", alignItems: "center" }}>
+					Create groups with your friends and pick NFL, NCAAFB, NBA, NCAABB, MLB
+					and NHL games. Pick spreads and totals in matchup, ranked or flat pick
+					modes.
+				</Box>
 			</Box>
-		</Link>
+		</a>
 	);
 }

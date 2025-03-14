@@ -95,15 +95,19 @@ body {
 }
 
 
-.pick-crunch-box {
+.pick-crunch-box,
+.bts-box {
   background-color: var(--background);
   border: 2px dashed var(--foreground);
   padding: 16px;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center; 
+  align-items: center;
+  width: 100%; /* Ensure the box stretches across the viewport */
+  max-width: 1200px; /* Keep content from being too wide */
+  margin: 0 auto; /* Center the content horizontally */
 }
+
 
 .pick-crunch-tech-stack {
   list-style: none; /* Remove default bullets */
@@ -114,3 +118,4 @@ body {
 .pick-crunch-tech-stack li {
   margin-bottom: 4px; /* Add spacing between items */
 }
+
