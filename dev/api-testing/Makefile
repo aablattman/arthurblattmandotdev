@@ -5,8 +5,10 @@ GIN_PORT = 8002
 WRK_DURATION = 10s
 WRK_THREADS = 4
 WRK_CONNECTIONS = 100
+EXPRESS_PORT = 8003
 
-build: build-fastapi build-gin
+build: build-fastapi build-gin build-express
+
 
 build-fastapi:
 	docker build -f Dockerfile_fastapi -t fastapi-demo .
@@ -14,21 +16,35 @@ build-fastapi:
 build-gin:
 	docker build -f Dockerfile_gin -t gin-demo .
 
-start: start-fastapi start-gin
+build-express:
+	docker build -f Dockerfile_express -t express-demo .
 
-stop: stop-fastapi stop-gin
+
+start: start-fastapi start-gin start-express
+
+
+stop: stop-fastapi stop-gin stop-express
+
 
 start-fastapi:
 	docker run -d --rm -p $(FASTAPI_PORT):8000 --name fastapi-demo fastapi-demo
 
-stop-fastapi:
-	docker stop fastapi-demo
-
 start-gin:
 	docker run -d --rm -p $(GIN_PORT):8000 --name gin-demo gin-demo
 
+start-express:
+	docker run -d --rm -p $(EXPRESS_PORT):8000 --name express-demo express-demo
+
+
 stop-gin:
 	docker stop gin-demo
+
+stop-fastapi:
+	docker stop fastapi-demo
+
+stop-express:
+	docker stop express-demo
+
 
 wrk-compare:
 	@echo "Benchmarking FastAPI on port $(FASTAPI_PORT)..."
@@ -47,3 +63,6 @@ wrk-detailed:
 	@echo "\nRunning detailed POST benchmark for Gin..."
 	@wrk -t$(WRK_THREADS) -c$(WRK_CONNECTIONS) -d$(WRK_DURATION) -s wrk_post.lua http://localhost:$(GIN_PORT)/ping > gin_detailed.txt
 	@cat gin_detailed.txt | grep -E "Requests/sec|Transfer/sec"
+	@echo "\nRunning detailed POST benchmark for Express..."
+	@wrk -t$(WRK_THREADS) -c$(WRK_CONNECTIONS) -d$(WRK_DURATION) -s wrk_post.lua http://localhost:$(EXPRESS_PORT)/ping > express_detailed.txt
+	@cat express_detailed.txt | grep -E "Requests/sec|Transfer/sec"
