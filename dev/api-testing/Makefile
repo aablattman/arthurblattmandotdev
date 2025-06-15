@@ -16,11 +16,19 @@ build-gin:
 
 start: start-fastapi start-gin
 
+stop: stop-fastapi stop-gin
+
 start-fastapi:
 	docker run -d --rm -p $(FASTAPI_PORT):8000 --name fastapi-demo fastapi-demo
 
+stop-fastapi:
+	docker stop fastapi-demo
+
 start-gin:
 	docker run -d --rm -p $(GIN_PORT):8000 --name gin-demo gin-demo
+
+stop-gin:
+	docker stop gin-demo
 
 wrk-compare:
 	@echo "Benchmarking FastAPI on port $(FASTAPI_PORT)..."
@@ -31,3 +39,11 @@ wrk-compare:
 	@cat fastapi_bench.txt | grep -E "Requests/sec|Latency|Transfer/sec"
 	@echo "\n📊 Gin Result:"
 	@cat gin_bench.txt | grep -E "Requests/sec|Latency|Transfer/sec"
+
+wrk-detailed:
+	@echo "Running detailed POST benchmark for FastAPI..."
+	@wrk -t$(WRK_THREADS) -c$(WRK_CONNECTIONS) -d$(WRK_DURATION) -s wrk_post.lua http://localhost:$(FASTAPI_PORT)/ping > fastapi_detailed.txt
+	@cat fastapi_detailed.txt | grep -E "Requests/sec|Transfer/sec"
+	@echo "\nRunning detailed POST benchmark for Gin..."
+	@wrk -t$(WRK_THREADS) -c$(WRK_CONNECTIONS) -d$(WRK_DURATION) -s wrk_post.lua http://localhost:$(GIN_PORT)/ping > gin_detailed.txt
+	@cat gin_detailed.txt | grep -E "Requests/sec|Transfer/sec"
