@@ -1,0 +1,12 @@
+Running 10s test @ http://localhost:8002/ping
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.95ms  843.10us  19.54ms   80.00%
+    Req/Sec    13.06k     0.86k   16.18k    64.85%
+  525178 requests in 10.10s, 87.65MB read
+Requests/sec:  51992.20
+Transfer/sec:      8.68MB
+
+📊 Detailed Latency (FastAPI or Gin):
+  95th percentile: 3.64 ms
+  99th percentile: 4.86 ms
