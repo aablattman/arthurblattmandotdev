@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 import AabddHeader from './components/aabdd-header';
@@ -10,11 +10,18 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "arthurblattman.dev",
-  description: "This is my website.",
-  icons: {
-    icon: '/rosie.ico'
-  }
+  title: "Arthur Blattman — Principal Engineer",
+  description:
+    "Principal Engineer — end-to-end systems (Data Platforms, Cloud Infra & Apps). I build event-driven platforms and customer-facing apps.",
+  openGraph: {
+    title: "Arthur Blattman — Principal Engineer",
+    description:
+      "End-to-end systems: data platforms, cloud infra & apps. Recent work: in-house loyalty platform, challenge app, GCP data platform.",
+    url: "https://arthurblattman.dev",
+    siteName: "arthurblattman.dev",
+    type: "website"
+  },
+  icons: { icon: "/rosie.ico" }
 };
 
 export default function RootLayout({ children }) {
@@ -27,4 +34,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-} 
+}
