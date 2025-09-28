@@ -3,10 +3,9 @@ import { Box, Typography } from "@mui/material";
 import PickCrunchBox from './pick-crunch-box';
 import BTSBox from './boston-terrier-simulator-box';
 
-const mono = {
-  fontFamily:
-    'var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-};
+// app/mono.js (optional helper—import where needed)
+export const mono = { fontFamily: 'var(--font-mono)', mb: 2 };
+
 
 
 export default function SideProjects() {
