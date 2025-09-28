@@ -16,7 +16,7 @@ export default function Hero() {
         and a GCP data platform that cut infra cost ~40%.
       </Typography>
       <Stack direction="row" spacing={2} className="hero-cta">
-        <Link href="/Arthur_Blattman_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <Link href="/ABlattman_Resume_2025.pdf" target="_blank" rel="noopener noreferrer">
           <Button variant="outlined" sx={mono}>Resume (PDF)</Button>
         </Link>
         <Link href="https://www.linkedin.com/in/arthur-blattman-b40226221/" target="_blank" rel="noopener noreferrer">
