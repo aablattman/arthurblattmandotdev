@@ -19,8 +19,8 @@
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 60px;   /* header height */
+  padding-bottom: 40px;/* footer height */
 }
 
 body {
@@ -29,17 +29,22 @@ body {
   font-family: var(--font-mono);
 }
 
-.content {
+.content,
+.aabdd-content {
   flex: 1;
   overflow: auto;
 }
 
+.aabdd-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 88px;
+}
+
 .aabdd-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Ensure it stays above other content */
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
   background-color: var(--background);
   border-bottom: 1px solid var(--foreground);
   padding: 16px;
@@ -49,73 +54,115 @@ body {
   align-items: center;
 }
 
-.aabdd-header span {
-  margin-right: auto; /* Ensures the text stays on the left */
-}
+.aabdd-header span { margin-right: auto; }
 
 .header-icons {
   display: flex;
-  gap: 16px; /* Add space between icons */
+  gap: 16px;
 }
-
 
 .github-link {
   display: flex;
   align-items: center;
-  transition: opacity 0.3s ease; /* Optional hover effect */
+  transition: opacity 0.2s ease;
 }
-
-.github-link:hover {
-  opacity: 0.8;
-}
+.github-link:hover { opacity: 0.85; }
 
 .aabdd-footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Ensure it stays above other content */
+  bottom: 0; left: 0; right: 0;
+  z-index: 1000;
   background-color: var(--background);
   border-top: 1px solid var(--foreground);
   text-align: center;
   padding: 8px 16px;
-}
-
-.aabdd-content {
-  flex: 1;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
 .website-intro {
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
-  text-align: center; /* Center text alignment inside the box */
-  height: 100%; /* Optional: Ensure the box takes up available height */
-  padding: 40px; /* Optional: Add some padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px 20px;
+  opacity: 0.85;
 }
 
+.hero-wrap { margin: 12px 0 8px; }
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.hero-sub {
+  line-height: 1.6;
+  max-width: 900px;
+  opacity: 0.95;
+}
+.hero-cta { margin-top: 14px; }
+
+.section { margin-top: 36px; }
+.section-title { margin-bottom: 12px; font-weight: 700; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid rgba(237, 237, 237, 0.18);
+  border-radius: 12px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+@media (prefers-color-scheme: light) {
+  .card {
+    border-color: rgba(23, 23, 23, 0.15);
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));
+  }
+}
+
+.card-title { margin-bottom: 6px; }
+.card-blurb { line-height: 1.6; }
+.card-stack { margin-top: 8px; font-size: 14px; opacity: 0.8; }
+
+.card-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-transform: none;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.card-row-content p { margin: 0; }
 
 .pick-crunch-box,
 .bts-box {
-  background-color: var(--background);
-  border: 2px dashed var(--foreground);
+  border: 1px solid rgba(237,237,237,0.18);
   padding: 16px;
-
   display: flex;
   align-items: center;
-  width: 100%; /* Ensure the box stretches across the viewport */
-  max-width: 1200px; /* Keep content from being too wide */
-  margin: 0 auto; /* Center the content horizontally */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+@media (prefers-color-scheme: light) {
+  .pick-crunch-box,
+  .bts-box {
+    border-color: rgba(23,23,23,0.15);
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));
+  }
 }
 
-
-.pick-crunch-tech-stack {
-  list-style: none; /* Remove default bullets */
-  padding-left: 0; /* Remove default padding */
-  margin-left: 16px; /* Indent to align with "N" in "NextJS" */
-}
-
-.pick-crunch-tech-stack li {
-  margin-bottom: 4px; /* Add spacing between items */
-}
-
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+img { display: block; }

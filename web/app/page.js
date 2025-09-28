@@ -1,16 +1,14 @@
-import Image from "next/image";
-
 import WebsiteIntro from './components/website-intro';
-import PickCrunchBox from './components/pick-crunch-box';
-import BTSBox from './components/boston-terrier-simulator-box';
+import CaseStudies from './components/case-studies';
+import SideProjects from './components/side-projects';
 
 
 export default function Home() {
   return (
     <>
       <WebsiteIntro />
-      <PickCrunchBox />
-      <BTSBox />
+      <CaseStudies />
+      <SideProjects />
     </>
   );
 }
