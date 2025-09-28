@@ -2,10 +2,7 @@ import { Roboto_Mono } from "next/font/google";
 import { Box, Typography, Button } from "@mui/material";
 import Link from "next/link";
 
-const mono = {
-  fontFamily:
-    'var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-};
+export const mono = { fontFamily: 'var(--font-mono)' };
 
 export default function CaseStudyCard({ title, blurb, stack, href }) {
   return (
