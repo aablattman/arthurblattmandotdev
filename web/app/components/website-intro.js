@@ -6,8 +6,8 @@ export const mono = { fontFamily: 'var(--font-mono)' };
 export default function Hero() {
   return (
     <Box className="hero-wrap">
-      <Typography component="h1" className="hero-title" sx={mono}>
-        Principal Engineer — End-to-End Systems
+      <Typography component="h1" className="hero-title" variant="bold" sx={mono}>
+        Principal Engineer - End-to-End Systems
       </Typography>
       <Typography className="hero-sub" sx={mono}>
         I design and ship event-driven platforms and customer-facing apps. Recent:
@@ -20,7 +20,7 @@ export default function Hero() {
           <Button variant="outlined" sx={mono}>Resume (PDF)</Button>
         </Link>
         <Link href="https://www.linkedin.com/in/arthur-blattman-b40226221/" target="_blank" rel="noopener noreferrer">
-          <Button variant="text" sx={mono}>LinkedIn</Button>
+          <Button variant="outlined" sx={mono}>LinkedIn</Button>
         </Link>
       </Stack>
     </Box>

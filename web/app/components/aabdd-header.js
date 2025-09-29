@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 export default function AabddHeader() {
   return (
     <Box className="aabdd-header" component="header" role="banner">
-      <Box className="brand"><span>arthurblattman.dev</span></Box>
+      <Box className="brand"><a href="/"><span>arthurblattman.dev</span></a></Box>
       <Box className="header-icons" role="navigation" aria-label="Quick links">
         <Link aria-label="PickCrunch" href="https://pickcrunch.com" target="_blank" rel="noopener noreferrer" title="PickCrunch">
           <Image src="/PickCrunch-Icon-RGB.png" alt="PickCrunch icon" width={24} height={24} />
