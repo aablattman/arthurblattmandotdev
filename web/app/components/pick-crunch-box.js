@@ -17,7 +17,7 @@ export default function PickCrunchBox() {
 
         <Box sx={{ fontFamily: 'var(--font-mono)' }}>
           Create groups with your friends and pick NFL, NCAAFB, NBA, NCAABB, MLB and NHL games.
-          Pick spreads and totals in matchup, ranked or flat pick modes.
+          Pick spreads and totals in matchup, ranked, or flat pick modes.
         </Box>
       </Box>
     </a>
