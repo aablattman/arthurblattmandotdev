@@ -80,11 +80,11 @@ export default function ChallengePage() {
         </List>
       </CaseSection>
 
-      <Stack direction="row" spacing={1.5}>
+      {/*<Stack direction="row" spacing={1.5}>
         <Button component={Link} href="/contact" variant="outlined" size="small" sx={{ textTransform: "none" }}>
           Request a deeper walkthrough
         </Button>
-      </Stack>
+      </Stack>*/}
     </WorkLayout>
   );
 }

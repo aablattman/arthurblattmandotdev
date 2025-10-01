@@ -76,7 +76,7 @@ export default function LoyaltyPage() {
         </List>
       </CaseSection>
 
-      <Stack direction="row" spacing={1.5}>
+      {/*<Stack direction="row" spacing={1.5}>
         <Button
           component={Link}
           href="/contact"
@@ -86,7 +86,7 @@ export default function LoyaltyPage() {
         >
           Request a deeper walkthrough
         </Button>
-      </Stack>
+      </Stack>*/}
     </WorkLayout>
   );
 }

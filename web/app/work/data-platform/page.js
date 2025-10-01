@@ -17,7 +17,7 @@ export default function DataPlatformPage() {
     >
       <CaseSection heading="Context & Goal">
         <Typography sx={{ opacity: 0.92 }}>
-          Deliver company-wide analytics and operational data products—not just BI—on fast,
+          Deliver company-wide analytics and operational data products,not just BI, on fast,
           cost-controlled models that multiple teams can trust.
         </Typography>
       </CaseSection>
@@ -42,7 +42,7 @@ export default function DataPlatformPage() {
         </Typography>
       </CaseSection>
 
-      <CaseSection heading="Architecture at a Glance">
+      {/*<CaseSection heading="Architecture at a Glance">
         <Box sx={{ borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)" }}>
           <Image
             src="/diagrams/data-platform-arch.png"
@@ -52,24 +52,21 @@ export default function DataPlatformPage() {
             style={{ width: "100%", height: "auto" }}
           />
         </Box>
-      </CaseSection>
+      </CaseSection>*/}
 
       <CaseSection heading="What I'd Improve Next">
         <List dense>
           <ListItem disableGutters>
-            <ListItemText primary="Metrics/semantic layer and data quality alerts; lineage visibility." />
-          </ListItem>
-          <ListItem disableGutters>
-            <ListItemText primary="Cost guardrails and adaptive freshness based on downstream usage." />
+            <ListItemText primary="Slim semantic layer + Slack AI data concierge so teams can pull governed slices." />
           </ListItem>
         </List>
       </CaseSection>
 
-      <Stack direction="row" spacing={1.5}>
+      {/*<Stack direction="row" spacing={1.5}>
         <Button component={Link} href="/contact" variant="outlined" size="small" sx={{ textTransform: "none" }}>
           Request a deeper walkthrough
         </Button>
-      </Stack>
+      </Stack>*/}
     </WorkLayout>
   );
 }
