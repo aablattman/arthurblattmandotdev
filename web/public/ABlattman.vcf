@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Blattman;Arthur;;;
+FN:Arthur Blattman
+TITLE:Principal Engineer
+EMAIL;TYPE=INTERNET,PREF:aablattman@gmail.com
+URL:https://arthurblattman.dev
+ADR;TYPE=WORK:;;Austin;TX;;USA
+NOTE:Data platforms • GCP • Next.js • MySQL
+END:VCARD
