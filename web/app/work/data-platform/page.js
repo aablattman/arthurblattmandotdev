@@ -17,7 +17,7 @@ export default function DataPlatformPage() {
     >
       <CaseSection heading="Context & Goal">
         <Typography sx={{ opacity: 0.92 }}>
-          Deliver company-wide analytics and operational data products,not just BI, on fast,
+          Deliver company-wide analytics and operational data products, not just BI, on fast,
           cost-controlled models that multiple teams can trust.
         </Typography>
       </CaseSection>
@@ -28,7 +28,7 @@ export default function DataPlatformPage() {
             <ListItemText primary="Dagster on a GCE VM (Docker) orchestrating BigQuery + dbt pipelines with Pub/Sub ingestion." />
           </ListItem>
           <ListItem disableGutters>
-            <ListItemText primary="Partitioned/clustered marts, typed staging layers, de-duplication and idempotent loads." />
+            <ListItemText primary="Partitioned/clustered marts, typed staging layers, and idempotent loads." />
           </ListItem>
           <ListItem disableGutters>
             <ListItemText primary="Operational feeds: Klaviyo purchase events, real-time retail dashboards, nightly revenue-accurate store closeouts, and other mini-SaaS integrations." />
